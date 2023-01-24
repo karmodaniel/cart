@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { IProductCart } from '../../models/cart.interface';
-import { CartService } from '../../services/cart/cart.service';
-import { SidenavService } from '../../services/sidenav/sidenav.service';
+import { IProductCart } from '../../../shared/models/cart.interface';
+import { CartService } from '../../../shared/services/cart/cart.service';
+import { SidenavService } from '../../../shared/services/sidenav/sidenav.service';
 
 @Component({
   selector: 'app-mini-cart',
@@ -55,6 +55,6 @@ export class MiniCartComponent implements OnInit {
       // this.subtotal = this.cartTotal;
 
       this.cartService.changeProductAmount(product, index, value);
-      this.productAmount.setValue(this.cartService.productAmount(index)); 
+      this.productAmount.setValue(this.cartService.productAmount(index));
     }
 }

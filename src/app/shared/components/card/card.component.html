@@ -1,5 +1,5 @@
-<mat-card class="product-card" (click)="goToDetails()">
-  <div class="product-image">
+<mat-card class="product-card">
+  <div class="product-image" (click)="goToDetails()">
     <img [src]="product.images[0]" [alt]="product.title" />
   </div>
   <mat-card-content>

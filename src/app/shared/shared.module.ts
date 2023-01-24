@@ -7,19 +7,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatInputModule } from '@angular/material/input';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { SwiperModule } from 'swiper/angular';
 
-
-import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
-import { MiniCartComponent } from './components/mini-cart/mini-cart.component';
 import { CardComponent } from './components/card/card.component';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 
 
 const materialModules = [
@@ -39,11 +38,17 @@ const materialModules = [
   SwiperModule
 ];
 
-const components = [ErrorDialogComponent, MiniCartComponent, CardComponent];
+const modules = [
+  CommonModule,
+  ReactiveFormsModule,
+  NgxSkeletonLoaderModule,
+]
+
+const components = [ErrorDialogComponent, CardComponent];
 
 @NgModule({
   declarations: [components],
-  imports: [ReactiveFormsModule, CommonModule, materialModules],
-  exports: [materialModules, components],
+  imports: [materialModules, modules],
+  exports: [materialModules, components, modules],
 })
 export class SharedModule {}

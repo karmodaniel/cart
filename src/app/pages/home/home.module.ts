@@ -1,7 +1,6 @@
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { SharedModule } from './../../shared/shared.module';
 import { HomeRoutingModule } from './home-routing.module';
@@ -12,7 +11,11 @@ const components = [HomeComponent, PdpComponent];
 
 @NgModule({
   declarations: [...components],
-  imports: [CommonModule, ReactiveFormsModule, HomeRoutingModule, SharedModule, NgxSkeletonLoaderModule, SharedModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    SharedModule,
+  ],
   exports: [...components],
 })
 export class HomeModule {}
